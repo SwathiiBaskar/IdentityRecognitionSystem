@@ -1,8 +1,7 @@
 import cv2
 import mediapipe as mp
 import numpy as np
-mp_face_mesh=mp.solutions.face_mesh #solutions is submodule inside mediapipe that contains pre-built ML
-#solutions, it contains read-made classes and functions
+mp_face_mesh=mp.solutions.face_mesh #solutions is submodule inside mediapipe that contains pre-built ML solutions, it contains read-made classes and functions
 '''mp.solutions.face_mesh -> Face Mesh class
 mp.solutions.hands -> Hand tracking class
 mp.solutions.pose -> Full body pose estimation class'''
@@ -12,8 +11,7 @@ face_mesh=mp_face_mesh.FaceMesh(static_image_mode=False,
                                 min_detection_confidence=0.5,
                                 min_tracking_confidence=0.5)
 #face_mesh holds a FaceMesh object which is an instance of face_mesh class
-#when mp_face_mesh.FaceMesh() function is called, python instantiates an object, allocates memory for it,
-#and loads the underlyind model
+#when mp_face_mesh.FaceMesh() function is called, python instantiates an object, allocates memory for it, and loads the underlyind model
 '''static_mode_image = False -> if True face detection runs every time, if false, detected once during first frame
 and track wherever landmarks move
 Keep true if using multiple images, and false for real-time video tracking'''
